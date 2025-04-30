@@ -33,11 +33,6 @@ export default function Principal() {
     const interval = setInterval(() => {
       setTime((prevTime) => {
         const totalSeconds = prevTime.minutes * 60 + prevTime.seconds + 1;
-        if (totalSeconds >= totalTime) {
-          setRunning(false);
-          clearInterval(interval);
-          return prevTime;
-        }
         return {
           minutes: Math.floor(totalSeconds / 60),
           seconds: totalSeconds % 60,
@@ -52,15 +47,15 @@ export default function Principal() {
 
   return (
     <div>
-      <div>
+      <div className="m-4">
         <h1 className="text-3xl font-bold text-white">Deadly Scrum</h1>
         <h2 className="text-2xl font-bold text-white">Cronômetro</h2>
         <h3 className="text-2xl font-bold text-white">
           {formatarMinutosSegundos(time.minutes)}:{formatarMinutosSegundos(time.seconds)}
         </h3>
-        <Button onClick={handleIniciar}>Iniciar</Button>
-        <Button onClick={handlePausar}>Pausar</Button>
-        <Button onClick={handleResetar}>Resetar</Button>
+        <Button className="m-2" onClick={handleIniciar}>Iniciar</Button>
+        <Button className="m-2" onClick={handlePausar}>Pausar</Button>
+        <Button className="m-2" onClick={handleResetar}>Resetar</Button>
       </div>
       <div className="relative h-[300px] w-[300px]">
         {Array.from({ length: totalImages }, (_, index) => {
