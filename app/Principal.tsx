@@ -49,7 +49,7 @@ export default function Principal() {
     <div>
       <div className="m-4">
         <h1 className="text-3xl font-bold text-white">Deadly Scrum</h1>
-        <h2 className="text-2xl font-bold text-white">Cronômetro</h2>
+        <h2 className="text-2xl font-bold text-white">Não mate o Sr Incrível!</h2>
         <h3 className="text-2xl font-bold text-white">
           {formatarMinutosSegundos(time.minutes)}:{formatarMinutosSegundos(time.seconds)}
         </h3>
